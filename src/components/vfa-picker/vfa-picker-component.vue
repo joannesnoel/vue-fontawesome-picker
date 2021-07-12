@@ -168,19 +168,7 @@ export default {
     picked(icon) {
       this.visible = false;
 
-      if (this.isUnicode) return this.$emit("input", icon.unicode);
-
-      if (this.isBoth) {
-        this.$emit("update:class", icon.class);
-        this.$emit("update:unicode", icon.unicode);
-        this.$emit("input", {
-          class: icon.class,
-          unicode: icon.unicode
-        });
-        return;
-      }
-
-      return this.$emit("input", icon.class);
+      return this.$emit("input", icon);
     }
   }
 };
